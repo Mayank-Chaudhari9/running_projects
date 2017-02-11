@@ -1,4 +1,4 @@
-#!/home/devil/Desktop/Untitled Folder/running_projects/tensor_tensor/tensorflow/bin/python
+#!/home/devil/tensorflow/bin/python
 
 import sys
 import getopt

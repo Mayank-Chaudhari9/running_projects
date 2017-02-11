@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/devil/Desktop/Untitled Folder/running_projects/tensor_tensor/tensorflow"
+VIRTUAL_ENV="/home/devil/tensorflow"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
