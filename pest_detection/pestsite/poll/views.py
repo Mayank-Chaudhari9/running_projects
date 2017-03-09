@@ -1,8 +1,7 @@
 from django.shortcuts import render
-
 from django.http import HttpResponse
-
 # Create your views here.
 
-def index(request):
-	return HttpResponse("Hello from django . You are at home page.")
+def index(response):
+	return HttpResponse("Hello from polling app . You are at home page.")
+
