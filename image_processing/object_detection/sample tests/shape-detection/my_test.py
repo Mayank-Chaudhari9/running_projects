@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 ## Image reading
-frame = cv2.imread('testoo.jpg')
+frame = cv2.imread('paper_test5.jpg')
 
 ## Image resizing logic
 r = 400.0 / frame.shape[1]
@@ -10,6 +10,7 @@ dim = (400, int(frame.shape[0] * r))
 frame = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
 
 ### smoothing the noise
+
 frame=cv2.GaussianBlur(frame, (5,5),0)
 
 # convert the image to grayscale for processing
