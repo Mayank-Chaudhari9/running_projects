@@ -7,7 +7,7 @@ def test(name, frame):
 	cv2.imwrite('./images/'+name+'.jpg',frame)
 	
 
-capture = cv2.VideoCapture("v1.mp4")
+capture = cv2.VideoCapture("v2.mp4")
 
 while(capture.isOpened()):
 	ret, frame = capture.read()
