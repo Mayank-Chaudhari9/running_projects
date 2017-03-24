@@ -2,18 +2,23 @@ from django.shortcuts import render
 from django.http import Http404
 from django.http import HttpResponse
 from django.template import loader
-
+from pest_classification.forms import LoginForm
 import requests
 import json
 
+
 # Create your views here.
 
+
+
+## -------------------------------------------------- Web page Handeling logic ----------------------
 def index(request):
 	return HttpResponse("Hello from django . You are at home page.")
 
 def test(request):
 	return render(request, 'pest_classification/index.html',)
 
+#-------Profile page handeling logic ------------------------- 
 def profile(request):
     parsedData = []
     if request.method == 'POST':
@@ -42,7 +47,23 @@ def pest_capture(request):
 
 def pest_detector(request):
 	return render(request, 'pest_classification/pest_detector.html')
+
+def login(request):
+	return render(request, 'pest_classification/login.html')
 	
-#def google(request):
-	#return redirect('http://google.com')
-	#return HttpResponseRedirect('https://google.com')
+##------------------------------------ Form handeling --------------------------------------------
+		## problem with this code
+def login_process(request):
+	username ="not logged in"
+
+	if request.method== "POST":
+		MyLoginForm = LoginForm(request.POST)
+
+		if MyLoginForm.is_valid():
+			username = MyLoginForm.cleaned_data['username']
+		username = request.POST.get('username',"")
+	else:
+		MyLoginForm = LoginForm()
+	return render(request,'pest_classification/loggedin.html', {"username":username})
+
+

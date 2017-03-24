@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.views.generic import TemplateView
 
 from . import views
 
@@ -9,6 +10,8 @@ urlpatterns =[
 		url(r'^profile/$', views.profile, name='profile'),
 		url(r'^pest_capture/$', views.pest_capture, name='pest_capture'),
 		url(r'^pest_detector/$', views.pest_detector, name='pest_detector'),
-		#url(r'^google/$', views.redirect, name='redirect'),
+		
+		url(r'^login/$', views.login, name = 'login'),
+   		url(r'^login_process/$', views.login_process, name = 'loggedin'),
 
 	]
