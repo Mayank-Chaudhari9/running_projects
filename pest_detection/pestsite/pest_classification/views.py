@@ -12,7 +12,7 @@ def index(request):
 	return HttpResponse("Hello from django . You are at home page.")
 
 def test(request):
-	return HttpResponse("Second Page")
+	return render(request, 'pest_classification/index.html',)
 
 def profile(request):
     parsedData = []
@@ -34,3 +34,15 @@ def profile(request):
         parsedData.append(userData)
     #return HttpResponse(parsedData)
     return render(request, 'pest_classification/profile.html',{'data': parsedData})
+
+def pest_capture(request):
+	return render(request, 'pest_classification/pest_capture.html')
+	
+
+
+def pest_detector(request):
+	return render(request, 'pest_classification/pest_detector.html')
+	
+#def google(request):
+	#return redirect('http://google.com')
+	#return HttpResponseRedirect('https://google.com')
