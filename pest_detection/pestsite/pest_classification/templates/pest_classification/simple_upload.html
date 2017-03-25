@@ -75,34 +75,27 @@
 	<div class="container-fluid">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-			<h3> File upload </h3>
+				<h3> File upload </h3>
 			</div>
 			<div class="panel-body">
-				<form method="post" action = "/pest_classification/simple_upload/" enctype="multipart/form-data">
-	    			{% csrf_token %}
-			    		<p> Submit the pest image to detect </p>
-			    		<label class="custom-file">
-			   				<input type="file" name="myfile" id="fileupload" class="custom-file-input" multiple="multiple">
-			   				<span class="custom-file-input">hello</span>
-						</label>
+				  <p> Submit the pest image to detect </p>
+				  <form method="post"  enctype="multipart/form-data">
+				    {% csrf_token %}
+				    <input type="file" name="myfile" id="fileupload">
+				    <button type="submit">Upload</button>
+				    <div id="dvPreview" class ="img-rounded"></div>
+				  </form>
 
-						<b>Live Preview</b>
-						<br />
-						<br />
-						<div id="dvPreview" class ="img-rounded"></div>
-						<button type="submit">Upload</button>
-	  			</form>
-	  			{% if uploaded_file_url %}
-	    			<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
-	  			{% endif %}
+				  {% if uploaded_file_url %}
+				    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+				  {% endif %}
+
+
 			</div>
-	 	</div>	
+			<form method="post" action="">
+				
+			</form>
+		</div>
 	</div>
+
 {% endblock %}
-
-
-
-
-
-</body>
-</html>

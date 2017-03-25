@@ -3,6 +3,10 @@ from django.http import Http404
 from django.http import HttpResponse
 from django.template import loader
 from pest_classification.forms import LoginForm
+
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
 import requests
 import json
 
@@ -66,4 +70,16 @@ def login_process(request):
 		MyLoginForm = LoginForm()
 	return render(request,'pest_classification/loggedin.html', {"username":username})
 
+	##-------------- file upload ---------
+
+def simple_upload(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'pest_classification/simple_upload.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, 'pest_classification/simple_upload.html')
 

@@ -13,5 +13,6 @@ urlpatterns =[
 		
 		url(r'^login/$', views.login, name = 'login'),
    		url(r'^login_process/$', views.login_process, name = 'loggedin'),
+   		url(r'^simple_upload/$', views.simple_upload, name = 'simple_upload'),
 
 	]
