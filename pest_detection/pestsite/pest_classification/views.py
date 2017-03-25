@@ -17,7 +17,7 @@ import json
 
 ## -------------------------------------------------- Web page Handeling logic ----------------------
 def index(request):
-	return HttpResponse("Hello from django . You are at home page.")
+	return render(request, 'pest_classification/index.html',)
 
 def test(request):
 	return render(request, 'pest_classification/index.html',)
@@ -78,8 +78,18 @@ def simple_upload(request):
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
-        return render(request, 'pest_classification/simple_upload.html', {
+        #return render(request, 'pest_classification/simple_upload.html', {
+         #   'uploaded_file_url': uploaded_file_url
+        #})
+        return render(request, 'pest_classification/pest_detection_view.html', {
             'uploaded_file_url': uploaded_file_url
         })
+
     return render(request, 'pest_classification/simple_upload.html')
+
+def pest_detection(request):
+	if request.method == 'POST':
+		location = request.POST.get('location') 
+
+	return HttpResponse(location)
 
