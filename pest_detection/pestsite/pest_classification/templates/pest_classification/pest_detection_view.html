@@ -1,3 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <script src="/static/jquery/jquery-3.2.0.js"></script>
+	<script src="/static/jquery/jquery-3.2.0.min.js"></script>
+	<script src="/static/jquery/jquery-3.2.0.min.map"></script>
+
+	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/custom/header1.css">
+
+</head>
+<body>
+
+<header class="header-two-bars">
+
+	<div class="header-first-bar">
+
+		<div class="header-limiter">
+
+			<h1><a href="/pest_classification">Automatic Pest Detection</a></h1>
+
+			<nav>
+				<a href="/pest_classification/pest_capture">Image Acquisition</a>
+				<a href="/pest_classification/pest_detector" class="selected">Pest Identification</a>
+				<a href="#">Report</a>
+				<a href="#">Team</a>
+			</nav>
+
+			<!--<a href="#" class="logout-button">Logout</a> -->
+		</div>
+
+	</div>
+
+</header>
+
 {% load static %}
 
 {% block content %}				
@@ -5,6 +45,7 @@
 
 	{% if uploaded_file_url %}
 	    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+	    <p> Hello there its working </p> 
 	{% endif %}
 
 {% endblock %}
