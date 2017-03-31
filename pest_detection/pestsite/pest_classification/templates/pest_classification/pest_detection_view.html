@@ -46,6 +46,12 @@
 	{% if uploaded_file_url %}
 	    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
 	    <p> Hello there its working </p> 
+	    <form method="post"  enctype="multipart/form-data" action="/pest_classification/pest_detection/">
+				    {% csrf_token %}
+				    
+				    <button type="submit">process</button>
+				    
+		</form>
 	{% endif %}
 
 {% endblock %}

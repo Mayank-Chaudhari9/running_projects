@@ -89,7 +89,8 @@ def simple_upload(request):
 
 def pest_detection(request):
 	if request.method == 'POST':
-		location = request.POST.get('location') 
+		pass
+		#location = request.POST.get('location') 
 
-	return HttpResponse(location)
+	return render(request, 'pest_classification/pest_query_response.html')
 
