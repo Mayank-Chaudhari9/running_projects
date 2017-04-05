@@ -14,7 +14,7 @@ urlpatterns =[
 		url(r'^login/$', views.login, name = 'login'),
    		url(r'^login_process/$', views.login_process, name = 'loggedin'),
    		url(r'^simple_upload/$', views.simple_upload, name = 'simple_upload'),
-   		url(r'^pest_detection/$', views.pest_detection, name = 'pest_detection'),
+   		url(r'^pest_detection/$', views.pest_detection, name = 'pest_query_response'),
 
 
 	]

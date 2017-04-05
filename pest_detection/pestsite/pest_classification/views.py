@@ -7,6 +7,8 @@ from pest_classification.forms import LoginForm
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
+import subprocess
+
 import requests
 import json
 
@@ -91,6 +93,7 @@ def pest_detection(request):
 	if request.method == 'POST':
 		pass
 		#location = request.POST.get('location') 
+	output = subprocess.check_call(['../test_scripts/test1.py'])
 
-	return render(request, 'pest_classification/pest_query_response.html')
+	return render(request, 'pest_classification/pest_query_response.html', {'output': output})
 
