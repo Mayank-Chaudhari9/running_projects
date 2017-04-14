@@ -7,11 +7,10 @@ from pest_classification.forms import LoginForm
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
-import subprocess
-
 import requests
 import json
 
+#import test
 
 # Create your views here.
 
@@ -90,10 +89,10 @@ def simple_upload(request):
     return render(request, 'pest_classification/simple_upload.html')
 
 def pest_detection(request):
-	if request.method == 'POST':
-		pass
-		#location = request.POST.get('location') 
-	output = subprocess.check_call(['../test_scripts/test1.py'])
-
-	return render(request, 'pest_classification/pest_query_response.html', {'output': output})
+	import test
+	#if request.method == 'POST':
+	
+	output = test.hello()
+	return HttpResponse(output,content_type = "text/plain")
+	#return render(request, 'pest_classification/pest_query_response.html', {'output': output})
 
