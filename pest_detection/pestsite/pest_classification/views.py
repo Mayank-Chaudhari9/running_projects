@@ -100,14 +100,17 @@ def pest_detection(request):
 	import label_fun
 
 	#print "all this work is waste oooh lalalallaaaaa"
+	media_path="/home/devil/Desktop/UntitledFolder/running_projects/pest_detection/pestsite"
 	y=" script integration successful"
 	labels = "/home/devil/tensorflow/tf_files/retrained_labels.txt"
 	graph = "/home/devil/tensorflow/tf_files/retrained_graph.pb"
-	image = "/home/devil/tensorflow/tf_files/testing_images/betal/test1.jpg"
+	#image = "/home/devil/tensorflow/tf_files/testing_images/betal/test1.jpg"
+	image = media_path + uploaded_file_url
 	#if request.method == 'POST':
 	#return y + " " + label_fun.label(labels, image, graph)
-	output = y + " " + label_fun.label(labels, image, graph)
+	output = y + " " + label_fun.label(labels, image, graph) #+ image
+	
 	#output = test.hello() + ' -> ' + uploaded_file_url
-	return HttpResponse(output,content_type = "text/plain")
-	#return render(request, 'pest_classification/pest_query_response.html', {'output': output})
+	#return HttpResponse(output,content_type = "text/plain")
+	return render(request, 'pest_classification/pest_query_response.html', {'output': output})
 
